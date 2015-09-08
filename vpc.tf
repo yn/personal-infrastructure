@@ -1,8 +1,3 @@
-provider "aws" {
-         allowed_account_ids = ["883753636031"]
-         region = "us-east-1"
-}
-
 resource "aws_vpc" "dev" {
         cidr_block = "10.0.0.0/16"         
 }
