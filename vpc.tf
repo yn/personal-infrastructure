@@ -2,8 +2,8 @@ resource "aws_vpc" "dev" {
   cidr_block = "10.0.0.0/16"         
 }
 
-resource "aws_security_group" "allow_home_in" {
-  name = "allow_all_in"
+resource "aws_security_group" "allow_all_in_from_home" {
+  name = "allow_all_in_from_home"
   description = "Allow all inbound traffic from home IP addresses"
   vpc_id = "${aws_vpc.dev.id}"
   
