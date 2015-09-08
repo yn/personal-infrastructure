@@ -1,12 +1,29 @@
 * <2015-09-08 Tue>
 - To have a VPC into which one can launch EC2 instances, you have to go through the wizard, which auto-creates a number of different objects. 
-** TODO Create a list of object types that are created by the EC2 Wizard (Checked means that 
-- [ ] 1 VPC
-- [ ] 1 Subnet
-- [ ] 1 Network ACL
-- [ ] 1 Security Group (for a total of 2, including default)
-- [ ] 1 Internet Gateway
-- [ ] 2 Route Tables (both created via the Wizard.)
+** TODO Create a list of object types that are created by the EC2 Wizard (Checked means that my VPC.tif already creates it)
+- [X] 1 VPC
+- [X] 1 Subnet
+- [X] 1 Network ACL
+- [X] 1 Security Group (for a total of 2, including default)
+- [X] 1 Internet Gateway
+- [X] 1 Main Route Table
+- [X] 1 Route Table associated with a subnet and a gateway
 
 ** TODO Change this infrastructure to mimic that.
 - I think this guy figured it out: https://github.com/hectcastro/terraform-aws-vpc/blob/feature/terraform-aws-vpc/aws-vpc.tf
+* <2015-09-08 Tue>
+- To have a VPC into which one can launch EC2 instances, you have to go through the wizard, which auto-creates a number of different objects. 
+*** DONE Create a list of object types that are created by the EC2 Wizard (Checked means that my VPC.tif already creates it)
+CLOSED: [2015-09-08 Tue 12:00]
+- [X] 1 VPC
+- [X] 1 Subnet
+- [X] 1 Network ACL
+- [X] 1 Security Group (for a total of 2, including default)
+- [X] 1 Internet Gateway
+- [X] 1 Main Route Table
+- [X] 1 Route Table associated with a subnet and a gateway
+
+** DONE Change this infrastructure to mimic that.
+CLOSED: [2015-09-08 Tue 12:00]
+- I think this guy figured it out: https://github.com/hectcastro/terraform-aws-vpc/blob/feature/terraform-aws-vpc/aws-vpc.tf
+
