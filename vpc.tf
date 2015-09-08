@@ -11,6 +11,8 @@ resource "aws_security_group" "allow_all_in_from_home" {
     from_port = 0
     to_port = 0
     protocol = "-1"
-    cidr_blocks = ["50.168.114.235/32"]
+    cidr_blocks = [
+      "50.168.114.235/32" # yn's home IP
+    ]
   }
 }
