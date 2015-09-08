@@ -1,3 +1,4 @@
+# VPC
 resource "aws_vpc" "dev" {
   cidr_block = "10.0.0.0/16"         
 }
@@ -16,3 +17,30 @@ resource "aws_security_group" "allow_all_in_from_home" {
     ]
   }
 }
+
+resource "aws_internet_gateway" "dev" {
+  vpc_id = "${aws_vpc.dev.id}"
+}
+
+# Public subnet
+
+resource "aws_subnet" "dev" {
+  vpc_id = "${aws_vpc.dev.id}"
+  cidr_block = "10.0.0.0/24"
+  map_public_ip_on_launch = true
+}
+
+resource "aws_route_table" "dev" {
+  vpc_id = "${aws_vpc.dev.id}"
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = "${aws_internet_gateway.dev.id}"
+  }
+}
+
+resource "aws_route_table_association" "dev" {
+  subnet_id = "${aws_subnet.dev.id}"
+  route_table_id = "${aws_route_table.dev.id}"
+}
+
