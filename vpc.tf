@@ -1,6 +1,8 @@
 # VPC
 resource "aws_vpc" "dev" {
-  cidr_block = "10.0.0.0/16"         
+  cidr_block = "10.0.0.0/16"
+  enable_dns_support = true
+  enable_dns_hostnames = true
 }
 
 resource "aws_security_group" "allow_all_in_from_home" {
